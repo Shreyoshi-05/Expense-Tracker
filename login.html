@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in page</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url(purple.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        #wrapper{
+            background-color: transparent;
+            width: 350px;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            border-radius: 20px;
+            border: 5px solid rgba(255, 255, 255, .5);
+            background-color: rgba(255, 255, 255, .2) ;
+
+        }
+        #wrapper h1{
+            text-align: center;
+
+
+        }
+        #wrapper div{
+            margin: 15px;
+            margin-top: 20px;
+            background: linear-gradient(rgb(255, 255, 255, 0.1));
+            backdrop-filter: blur(10px);
+        }
+        #wrapper input{
+            border-radius: 20px;
+            padding: 4px;
+            padding: 5px;
+        }
+
+        #btn{
+            margin-top: 15px;
+            display: flex;
+            flex-direction: row;
+            /* background-color: antiquewhite; */
+            padding: 2px 20px;
+            
+        }
+
+       #btn-rl{
+        background-color: white;
+        margin: 2px solid white;
+        padding: 7px 15px;
+        border-radius: 20px;
+        width:90px ;
+        border: 3px solid white;
+       }
+       #btn-rl a{
+        text-decoration: none;
+        color: black;
+       }
+
+    </style>
+
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Login Here</h1>
+
+
+        <form>
+
+            <div id="div">
+                <h3>Email</h3>
+                <input type="email" class="email">
+            </div>
+
+            <div id="div">
+                <h3>Password</h3>
+                <input type="password" class="password">
+            </div>
+
+
+        </form>
+
+        <div id="btn">
+            <div>
+                <button id="btn-rl"><a href="http://127.0.0.1:5500/register.html">SIGN UP</a></button>
+            </div>
+
+            <div>
+                <button id="btn-rl" class="login-btn" onclick="getDeta()">LOGIN</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function getDeta(){
+
+            const email = document.querySelector(".email").value;
+            const pass = document.querySelector(".password").value;
+            const btn = document.querySelector(".login-btn");
+
+            const gotPass = localStorage.getItem("userPass")
+            const gotMail = localStorage.getItem("userEmail")
+
+            if(email==gotMail && pass==gotPass){
+                alert("Successfully loggedIn");
+            }else{
+                alert("invalid details")
+            }
+            
+            
+            // const gotPass = localStorage.getItem("userPass")
+            // const gotEmail = localStorage.getItem("userEmail")
+
+            // if(gotEmail==email){
+            //     if(gotPass==pass){
+            //         alart("Logged in successfully");
+            //     }else{
+            //         alert("Wrong password");
+            //     }
+            // }else{
+            //     alart("Invalid details")
+            // }
+        }
+
+    </script>
+
+
+</body>
+</html>

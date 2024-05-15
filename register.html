@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register page</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url(purple.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        #wrapper{
+            background-color: transparent;
+            width: 350px;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            border-radius: 20px;
+            border: 5px solid rgba(255, 255, 255, .5);
+            background-color: rgba(255, 255, 255, .2) ;
+
+        }
+        #wrapper h1{
+            text-align: center;
+
+
+        }
+        #wrapper div{
+            margin: 15px;
+        }
+        #wrapper input{
+            border-radius: 20px;
+            padding: 4px;
+            padding: 5px;
+        }
+
+        #btn{
+            margin-top: 15px;
+            display: flex;
+            flex-direction: row;
+            /* background-color: antiquewhite; */
+            padding: 2px 20px;
+        }
+       button{
+        background-color: white;
+        margin: 2px solid white;
+        padding: 7px 15px;
+        border-radius: 20px;
+       }
+       button a{
+        text-decoration: none;
+        padding: 5px;
+        color: black;
+       }
+
+    </style>
+
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Sign Up</h1>
+
+        <form action="#">
+
+            <div id="div">
+                <h3>Name</h3>
+                <input type="text" id="name">
+            </div>
+
+            <div id="div">
+                <h3>Email</h3>
+                <input type="email" id="email">
+            </div>
+
+            <div id="div">
+                <h3>Password</h3>
+                <input type="password" id="password">
+            </div>
+
+            <div id="div">
+                <h3>Confirm Password</h3>
+                <input type="password">
+            </div>
+
+            <div id="btn">
+                <div>
+                    <button  onclick="setdeta()" >REGISTER</button>
+                </div>
+    
+                <div>
+                    <button  class="login"><a 
+                         href="http://127.0.0.1:5500/login.html">LOGIN</a> 
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- localStorage.setItem("userName", name) -->
+    <!-- //     localStorage.setItem("userEmail", email) -->
+    
+
+    <script>
+
+        function setdeta(){
+            const name = document.getElementById("name").value
+            const email = document.getElementById("email").value
+            const pass = document.getElementById("password").value
+
+            if(name==0){
+                alert("enter your name")
+            }else{
+                localStorage.setItem("userName",name)
+                localStorage.setItem("userEmail", email)
+                localStorage.setItem("userPass", pass)
+
+                // alert("registration successful");
+                window.location.href="login.html";
+
+            }
+
+            
+
+
+
+
+        }
+        
+
+
+        // const rBtn = document.querySelector(".registerBtn")
+        
+        
+        // rBtn.addEventListener("click",()=>{
+
+            
+            
+        // })
+        
+    </script>
+
+
+</body>
+</html>
